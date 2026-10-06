@@ -1,0 +1,2 @@
+const movibles=[...document.querySelectorAll('[data-speed]')];let espera=!1;function mover(){movibles.forEach(el=>el.style.transform=`translate3d(0,${scrollY * el.dataset.speed}px,0)`);espera=!1}
+if(!matchMedia('(prefers-reduced-motion: reduce)').matches){addEventListener('scroll',()=>{if(!espera){espera=!0;requestAnimationFrame(mover)}},{passive:!0})}
