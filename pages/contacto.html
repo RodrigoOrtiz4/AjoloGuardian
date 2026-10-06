@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Reportes y dudas | AjoloGuardi&aacute;n</title>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&family=Nunito+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+    <link href="../css/styles.css" rel="stylesheet">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-md navbar-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="../index.html"><i class="fa-solid fa-droplet me-2"></i>AjoloGuardián</a>
+            <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#nav" aria-label="Menú">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="nav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="../index.html">Conoce al ajolote</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../index.html#especies">Especies</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../pages/contacto.html">Reportes y dudas</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../pages/quiz.html">Quiz</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <header class="page-head">
+        <div class="container" data-aos="fade-right">
+            <h1>Reportes y dudas</h1>
+            <p>Avisa de un problema en el hábitat del ajolote o pregunta lo que quieras saber de estos anfibios.</p>
+        </div>
+    </header>
+
+    <section>
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-7" data-aos="fade-right">
+                    <div class="panel">
+                        <h2 class="h4 mb-3">Escríbenos</h2>
+                        <div id="ok" class="alert alert-success d-none" role="alert"></div>
+
+                        <form id="form" novalidate>
+                            <div class="mb-3">
+                                <label class="form-label" for="tema">Tema</label>
+                                <div class="input-group has-validation">
+                                    <span class="input-group-text"><i class="fa-solid fa-list-ul"></i></span>
+                                    <select id="tema" class="form-select" required>
+                                        <option value="">Selecciona una opción</option>
+                                        <optgroup label="Reportar un problema">
+                                            <option>Contaminación del agua</option>
+                                            <option>Especies invasoras (tilapia, carpa)</option>
+                                            <option>Avistamiento de ajolote</option>
+                                            <option>Captura o venta ilegal</option>
+                                        </optgroup>
+                                        <optgroup label="Hacer una pregunta">
+                                            <option>Cuidados y tenencia</option>
+                                            <option>Biología y reproducción</option>
+                                            <option>Conservación y cómo ayudar</option>
+                                            <option>Otra duda</option>
+                                        </optgroup>
+                                    </select>
+                                    <div class="invalid-feedback">Elige un tema.</div>
+                                </div>
+                            </div>
+
+                            <div class="mb-3">
+                                <label class="form-label" for="nombre">Nombre</label>
+                                <div class="input-group has-validation">
+                                    <span class="input-group-text"><i class="fa-solid fa-user"></i></span>
+                                    <input id="nombre" class="form-control" required minlength="3" autocomplete="name">
+                                    <div class="invalid-feedback">Escribe tu nombre.</div>
+                                </div>
+                            </div>
+
+                            <div class="mb-3">
+                                <label class="form-label" for="mail">Correo de contacto</label>
+                                <div class="input-group has-validation">
+                                    <span class="input-group-text"><i class="fa-solid fa-envelope"></i></span>
+                                    <input type="email" id="mail" class="form-control" required autocomplete="email">
+                                    <div class="invalid-feedback">Escribe un correo válido.</div>
+                                </div>
+                            </div>
+                            
+                            <div id="camposReporte">
+                                <div class="mb-3">
+                                    <label class="form-label" for="fecha">Fecha del suceso</label>
+                                    <div class="input-group has-validation">
+                                        <span class="input-group-text"><i class="fa-solid fa-calendar-days"></i></span>
+                                        <input type="date" id="fecha" class="form-control" data-req>
+                                        <div class="invalid-feedback">Indica la fecha.</div>
+                                    </div>
+                                </div>
+
+                                <div class="mb-3">
+                                    <label class="form-label" for="lugar">Lugar</label>
+                                    <div class="input-group has-validation">
+                                        <span class="input-group-text"><i class="fa-solid fa-location-dot"></i></span>
+                                        <input id="lugar" class="form-control" data-req placeholder="Ej. Canal de Cuemanco, Xochimilco">
+                                        <div class="invalid-feedback">Indica dónde ocurrió.</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="mb-3">
+                                <label class="form-label" for="msg"><span id="msgLabel">Mensaje</span></label>
+                                <div class="input-group has-validation">
+                                    <span class="input-group-text"><i class="fa-solid fa-comment-dots"></i></span>
+                                    <textarea id="msg" rows="4" minlength="15" class="form-control" required></textarea>
+                                    <div class="invalid-feedback">Escribe al menos 15 caracteres.</div>
+                                </div>
+                            </div>
+
+                            <button class="btn btn-ajolote w-100" type="submit"><i class="fa-solid fa-paper-plane me-2"></i>Enviar</button>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="col-lg-5" data-aos="fade-left">
+                    <h2 class="h4 mb-3">Dudas frecuentes</h2>
+                    <div class="accordion" id="faq">
+                        <div class="accordion-item">
+                            <h3 class="accordion-header">
+                                <button class="accordion-button" data-bs-toggle="collapse" data-bs-target="#f0">
+                                    <i class="fa-solid fa-circle-question me-2"></i>¿Puedo tener un ajolote como mascota?
+                                </button>
+                            </h3>
+                            <div id="f0" class="accordion-collapse collapse show" data-bs-parent="#faq">
+                                <div class="accordion-body">
+                                    Sí, pero procura que venga de un criadero legal y conoce
+                                    antes sus cuidados: necesita agua fría, limpia y sin cloro.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item">
+                            <h3 class="accordion-header">
+                                <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#f1">
+                                    <i class="fa-solid fa-circle-question me-2"></i>¿Qué hago si veo basura o peces invasores en un canal?
+                                </button>
+                            </h3>
+                            <div id="f1" class="accordion-collapse collapse " data-bs-parent="#faq">
+                                <div class="accordion-body">
+                                    Envía un reporte con el lugar, la fecha y una foto si
+                                    puedes. Elige el tema que mejor describa lo que viste.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item">
+                            <h3 class="accordion-header">
+                                <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#f2">
+                                    <i class="fa-solid fa-circle-question me-2"></i>¿Puedo liberar mi ajolote en Xochimilco?
+                                </button>
+                            </h3>
+                            <div id="f2" class="accordion-collapse collapse " data-bs-parent="#faq">
+                                <div class="accordion-body">
+                                    No. Un ajolote criado en cautiverio puede llevar
+                                    enfermedades y alterar a las poblaciones silvestres.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item">
+                            <h3 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#f3">
+                                    <i class="fa-solid fa-circle-question me-2"></i>¿Por qué el ajolote puede regenerar sus extremidades?
+                                </button>
+                            </h3>
+                            <div id="f3" class="accordion-collapse collapse " data-bs-parent="#faq">
+                                <div class="accordion-body">
+                                    Tras una herida forma un grupo de células llamado blastema,
+                                    que reconstruye el tejido perdido. Los científicos lo estudian para entender la
+                                    regeneración.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item">
+                            <h3 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#f4">
+                                    <i class="fa-solid fa-circle-question me-2"></i>¿Qué temperatura necesita el agua?
+                                </button>
+                            </h3>
+                            <div id="f4" class="accordion-collapse collapse " data-bs-parent="#faq">
+                                <div class="accordion-body">
+                                    Lo ideal es agua fría, entre 14 y 18 °C. Con calor excesivo se estresa y se enferma con más facilidad.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item">
+                            <h3 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#f5">
+                                    <i class="fa-solid fa-circle-question me-2"></i>¿Qué come un ajolote?
+                                </button>
+                            </h3>
+                            <div id="f5" class="accordion-collapse collapse" data-bs-parent="#faq">
+                                <div class="accordion-body">
+                                    Es carnívoro: come lombrices, larvas y alimento formulado para ajolotes. Pregunta a un criador o 
+                                    veterinario de animales exóticos cuál es la dieta adecuada.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item">
+                            <h3 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#f6">
+                                    <i class="fa-solid fa-circle-question me-2"></i>¿Puedo tener varios en la misma pecera?
+                                </button>
+                            </h3>
+                            <div id="f6" class="accordion-collapse collapse" data-bs-parent="#faq">
+                                <div class="accordion-body">
+                                    Es posible, pero deben ser de tamaño similar y tener espacio
+                                    suficiente. Si no, pueden morderse las branquias o las patas.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item">
+                            <h3 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#f7">
+                                    <i  class="fa-solid fa-circle-question me-2"></i>¿Cuántos años vive?
+                                </button>
+                            </h3>
+                            <div id="f7" class="accordion-collapse collapse " data-bs-parent="#faq">
+                                <div class="accordion-body">
+                                    Con buenos cuidados puede vivir alrededor de 10 a 15 años,
+                                    aunque depende de su alimentación, el agua y su salud.
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="accordion-item">
+                            <h3 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#f10">
+                                    <i class="fa-solid fa-circle-question me-2"></i>¿Cómo puedo ayudar sin ir a Xochimilco?
+                                </button>
+                            </h3>
+                            <div id="f10" class="accordion-collapse collapse " data-bs-parent="#faq">
+                                <div class="accordion-body">
+                                    No tires basura en canales ni drenajes, no liberes mascotas
+                                    acuáticas, comparte información verificada y apoya organizaciones de conservación.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-4 text-center">
+        <div class="container">
+            <p class="mb-1 fw-semibold">AjoloGuardi&aacute;n · Protege al ajolote, protege Xochimilco</p>
+            <small>Proyecto escolar de Aplicaciones Web. Los envíos de datos son simulados.</small>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>AOS.init({ duration: 700, once: true });</script>
+    <script src="../js/contacto.js"></script>
+</body>
+</html>

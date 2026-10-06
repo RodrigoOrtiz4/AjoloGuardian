@@ -1,0 +1,425 @@
+:root {
+    --agua: #0E3B4A;
+    --agua2: #14566B;
+    --rosa: #F29BB1;
+    --verde: #4FA66B;
+    --verde-o: #2F7A4B;
+    --fondo: #EEF7F5;
+    --txt: #17323B
+}
+
+body {
+    font-family: 'Nunito Sans', sans-serif;
+    font-display: optional;
+    background: var(--fondo);
+    color: var(--txt);
+    line-height: 1.65
+}
+
+h1, h2, h3, h4, .navbar-brand {
+    font-family: 'Fredoka', sans-serif;
+    color: var(--agua)
+}
+
+.navbar {
+    background: var(--agua)
+}
+
+.navbar-brand {
+    color: #fff !important;
+    font-weight: 700
+}
+
+.nav-link {
+    color: #d8eef0 !important
+}
+
+.nav-link:hover, .nav-link:focus {
+    color: var(--rosa) !important
+}
+
+a:focus-visible, button:focus-visible, .form-control:focus, .form-select:focus {
+    outline: 3px solid var(--rosa);
+    outline-offset: 2px;
+    box-shadow: none
+}
+
+.btn-ajolote {
+    background: var(--rosa);
+    color: var(--agua);
+    font-weight: 700;
+    border: 0;
+    border-radius: 50rem;
+    padding: .65rem 1.5rem
+}
+
+.btn-ajolote:hover {
+    background: #f7b3c4;
+    color: var(--agua)
+}
+
+.btn-verde {
+    background: var(--verde-o);
+    color: #fff;
+    border-radius: 50rem;
+    font-weight: 600;
+    padding: .6rem 1.4rem
+}
+
+.btn-verde:hover {
+    background: var(--verde);
+    color: #fff
+}
+
+.hero {
+    background: linear-gradient(180deg, var(--agua) 0%, var(--agua2) 100%);
+    color: #fff;
+    padding: 4.5rem 0 6rem;
+    position: relative
+}
+
+.hero h1 {
+    color: #fff;
+    font-size: clamp(2.4rem, 6vw, 4rem);
+    font-weight: 700
+}
+
+.hero p {
+    color: #cfe8ea;
+    font-size: 1.15rem;
+    max-width: 34rem
+}
+
+.hero-wave {
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    width: 100%;
+    display: block
+}
+
+.hero-axo {
+    max-width: 340px;
+    width: 100%;
+    animation: flota 5s ease-in-out infinite
+}
+
+@keyframes flota {
+    50% {
+        transform: translateY(-14px)
+    }
+}
+
+.page-head {
+    background: var(--agua);
+    color: #fff;
+    padding: 2.5rem 0 3.5rem
+}
+
+.page-head h1 {
+    color: #fff
+}
+
+.page-head p {
+    color: #cfe8ea;
+    margin: 0
+}
+
+section {
+    padding: 3.5rem 0
+}
+
+.dato {
+    border-left: 6px solid var(--verde);
+    background: #fff;
+    border-radius: .75rem;
+    padding: 1.25rem 1.5rem;
+    height: 100%
+}
+
+.dato i {
+    color: var(--verde-o);
+    font-size: 1.6rem
+}
+
+.amenaza {
+    background: var(--agua);
+    color: #d8eef0;
+    border-radius: 1.25rem;
+    padding: 1.5rem;
+    height: 100%;
+    transition: transform 0.5s
+}
+
+.amenaza:hover {
+    transform: translateY(-8px);
+}
+
+.amenaza h3 {
+    color: var(--rosa);
+    font-size: 1.2rem
+}
+
+.amenaza i {
+    color: var(--rosa)
+}
+
+.band {
+    background: #fff
+}
+
+.estado {
+    display: inline-block;
+    background: #c0392b;
+    color: #fff;
+    padding: .25rem .9rem;
+    border-radius: 50rem;
+    font-weight: 700;
+    font-size: .9rem
+}
+
+.panel {
+    background: #fff;
+    border-radius: 1.25rem;
+    padding: 1.75rem;
+    box-shadow: 0 6px 24px rgba(14, 59, 74, .1)
+}
+
+#mapa {
+    height: 440px;
+    border-radius: 1.25rem;
+    box-shadow: 0 6px 24px rgba(14, 59, 74, .15)
+}
+
+.opcion {
+    display: block;
+    width: 100%;
+    text-align: left;
+    background: #fff;
+    border: 2px solid #cfe3e0;
+    border-radius: .9rem;
+    padding: .8rem 1.1rem;
+    margin-bottom: .7rem;
+    font-weight: 600;
+    color: var(--txt)
+}
+
+.opcion:hover:not(:disabled) {
+    border-color: var(--agua2)
+}
+
+.opcion.ok {
+    background: #dff3e5;
+    border-color: var(--verde-o)
+}
+
+.opcion.mal {
+    background: #fbe0e5;
+    border-color: #d9536f
+}
+
+.progress {
+    height: .8rem
+}
+
+.progress-bar {
+    background: var(--verde)
+}
+
+footer {
+    background: var(--agua);
+    color: #cfe8ea
+}
+
+@media (prefers-reduced-motion:reduce) {
+    .hero-axo {
+        animation: none
+    }
+}
+
+:root{--parallax-img: url('../img/xochimilco.jpg') } 
+.hero {
+    overflow: hidden
+}
+
+.hero .container {
+    position: relative;
+    z-index: 1
+}
+
+.burbuja {
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(242, 155, 177, .18);
+    pointer-events: none
+}
+
+.b1 {
+    width: 120px;
+    height: 120px;
+    left: 6%;
+    top: 18%
+}
+
+.b2 {
+    width: 70px;
+    height: 70px;
+    right: 10%;
+    top: 55%;
+    background: rgba(79, 166, 107, .25)
+}
+
+.img-slot {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    font-size: 3rem;
+    color: rgba(255, 255, 255, .45);
+    background: linear-gradient(135deg, var(--agua2), var(--verde-o))
+}
+
+.img-slot img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover
+}
+
+.carousel-item .img-slot {
+    height: 360px;
+    border-radius: 1.25rem
+}
+
+.carousel-caption {
+    background: rgba(14, 59, 74, .8);
+    border-radius: .9rem;
+    padding: .8rem 1rem;
+    left: 8%;
+    right: 8%;
+    bottom: 1rem
+}
+
+.carousel-caption h3 {
+    color: #fff;
+    font-size: 1.3rem;
+    margin: 0
+}
+
+.carousel-caption p {
+    margin: 0
+}
+
+.esp-card {
+    border: 0;
+    border-radius: 1.25rem;
+    overflow: hidden;
+    height: 100%;
+    background: #fff;
+    box-shadow: 0 6px 20px rgba(14, 59, 74, .1);
+    transition: transform .25s
+}
+
+.esp-card:hover {
+    transform: translateY(-6px)
+}
+
+.esp-card .img-slot {
+    height: 180px;
+    transition: scale 0.2s
+}
+
+.esp-card:hover .img-slot {
+    scale: 1.1
+}
+
+/* Fade up de las tarjetas al filtrar */
+@keyframes subir {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: none; }
+}
+
+.item.anim {
+  animation: subir .5s ease both;
+  animation-delay: var(--d, 0s);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .item.anim { animation: none; }
+}
+
+.parallax {
+    padding: 7rem 0;
+    text-align: center;
+    color: #fff;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-image: linear-gradient(rgba(14, 59, 74, .68), rgba(14, 59, 74, .68)), var(--parallax-img, linear-gradient(135deg, #14566B, #2F7A4B))
+}
+
+.parallax h2 {
+    color: #fff;
+    font-size: clamp(1.8rem, 4vw, 2.8rem)
+}
+
+@media (max-width:768px),
+(prefers-reduced-motion:reduce) {
+    .parallax {
+        background-attachment: scroll
+    }
+}
+
+.input-group-text {
+    background: #e3f1ee;
+    color: var(--agua2);
+    border-color: #cfe3e0;
+    min-width: 2.8rem;
+    justify-content: center
+}
+
+.progress {
+    height: 1.1rem;
+    border-radius: 50rem;
+    background: #d5e8e4;
+    margin-bottom: 1rem
+}
+
+.progress-bar {
+    background-color: var(--verde);
+    font-size: .75rem;
+    font-weight: 700;
+    transition: width .9s cubic-bezier(.22, 1, .36, 1)
+}
+
+.accordion-button:not(.collapsed) {
+    background: #e3f1ee;
+    color: var(--agua)
+}           
+
+/* ---- barra con rayas visibles y animadas ---- */
+.barra-rayas {
+    background-color: var(--verde);
+    background-image: linear-gradient(45deg, rgba(255, 255, 255, .4) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .4) 50%, rgba(255, 255, 255, .4) 75%, transparent 75%, transparent);
+    background-size: 1.6rem 1.6rem;
+    animation: rayas 1s linear infinite;
+    box-shadow: 0 0 12px rgba(79, 166, 107, .6)
+}
+
+@keyframes rayas {
+    from {
+        background-position: 1.6rem 0
+    }
+
+    to {
+        background-position: 0 0
+    }
+}
+
+@media (prefers-reduced-motion:reduce) {
+    .barra-rayas {
+        animation-duration: 4s
+    }
+}
